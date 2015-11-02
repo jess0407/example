@@ -1,0 +1,36 @@
+<div layout="row">
+  <md-card flex="20">
+      <md-card-content >
+          <p class="md-title">By Time</p>
+          <md-chips ng-model="timeBreakdowns" readonly="true">
+              <md-chip-template  ng-click="addTimeMatric($chip)" ng-class="{selected: $chip.selected}">
+                {{$chip.label}}
+              </md-chip-template>
+          </md-chips>
+      </md-card-content>
+  </md-card>
+  <md-card flex="55">
+      <md-card-content>
+          <p class="md-title">Further Breakdowns</p>
+          <md-chips ng-model="otherBreakdowns" readonly="true">
+            <md-chip-template ng-click="addMatric($chip)" ng-class="{selected: $chip.selected}">
+              {{$chip.label}}
+            </md-chip-template>
+          </md-chips>
+      </md-card-content>
+  </md-card>
+</div>
+<div layout="row">
+    <md-card flex="80">
+        <md-card-content>
+          <p>Breakdown summary (ordered as it will appear in your report)</p>
+          <md-chips ng-model="selectedMatrics"
+                    placeholder="Breakdown summary (ordered as it will appear in your report)"
+                    readonly="false">
+            <md-chip-template>
+              {{$chip.label}}
+            </md-chip-template>
+          </md-chips>
+        </md-card-content>
+    </md-card>
+</div>
